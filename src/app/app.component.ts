@@ -14,11 +14,13 @@ import { Component } from '@angular/core';
     <li *ngFor="let arr of monEtre">{{ arr }}
     </li>
   </ul>
+  <img [src] = "angularLogo"/>
 `,
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   // title = 'app';
+angularLogo= 'C:/Users/ALX-PC/code/my-project-name/src/app/image/etre2.png';
   monEtre = ['Je suis', 'Tu es', 'Elle/Il est', 'Nous somme', 'Vous etes', 'Elles/Ils sont'];
   myObject= {
   Etre: 'Etre [To Be]',
