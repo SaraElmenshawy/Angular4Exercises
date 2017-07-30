@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
  // templateUrl: './app.component.html',
  // template: '<h1>Hello WOrld</h1>',
   template: `
-  <h1>Bonjour le monde</h1>
+  <h1 [ngStyle]="titlsStyles">Bonjour le monde</h1>
   <p>{{myObject.Etre}}</p>
   <div *ngIf="monEtre; then temp1 else temp2"></div>
   <ng-template #temp1>Repetez-moi</ng-template>
@@ -25,6 +25,11 @@ import { Component } from '@angular/core';
 export class AppComponent {
   // title = 'app';
   angularLogo= 'http://1.bp.blogspot.com/-Zi023Bis7Es/UnBiSAHuWZI/AAAAAAAAAHE/lxcmIQjP5e8/s1600/etre2.png';
+  titlsStyle= 'red';
+  titlsStyles= {
+  'color': 'pink',
+    'font-size': '4em'
+  };
   monEtre = ['Je suis', 'Tu es', 'Elle/Il est', 'Nous somme', 'Vous etes', 'Elles/Ils sont'];
   myObject= {
   Etre: 'Etre [To Be]',
