@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataService } from './data.service' ;
 
 @Component({
   selector: 'app-root',
@@ -19,11 +20,19 @@ import { Component } from '@angular/core';
   <div [hidden]= "edit">
   <img [src] = "angularLogo"/>
   </div>
+
+  <p>{{ someProperty }}</p>
 `,
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   // title = 'app';
+ constructor(private dataService: DataService) {
+
+  }
+ someProperty = [];
+
+
   angularLogo= 'http://1.bp.blogspot.com/-Zi023Bis7Es/UnBiSAHuWZI/AAAAAAAAAHE/lxcmIQjP5e8/s1600/etre2.png';
   titlsStyle= 'red';
   titlsStyles= {
@@ -38,5 +47,10 @@ export class AppComponent {
   edit= true;
   myEvent(event) {
    this.edit = false;
+  }
+   ngOnInit() {
+    console.log(this.dataService.Avoir);
+
+    this.someProperty = this.dataService.Avoir;
   }
 }
